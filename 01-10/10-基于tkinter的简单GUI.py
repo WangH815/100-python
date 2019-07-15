@@ -23,7 +23,7 @@ def main():
     panel = tkinter.Frame(top)
     button1 = tkinter.Button(panel, text='修改', command=change_label_text)
     button1.pack(side='left')
-    button2 = tkinter.Button(panel, text='退出', command=confirm_to_quit)
+    button2 = tkinter.Button(panel, text='退出', command=confirm_to_qiut)
     button2.pack(side='right')
     panel.pack(side='bottom')
     tkinter.mainloop()
