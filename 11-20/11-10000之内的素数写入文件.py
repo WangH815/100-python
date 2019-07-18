@@ -10,7 +10,7 @@ def is_prim(n):    # 判断是否是素数
 
 
 def main():
-    files = ('a.txt', 'b.txt', 'c.txt')   # 文件名元组(tuple)，有序不可变
+    files = ('../../tmp/a.txt', '../../tmp/b.txt', '../../tmp/c.txt')   # 文件名元组(tuple)，有序不可变
     fs_list = []                          # 空列表(list)，有序可变
     try:
         for file in files:
@@ -29,7 +29,7 @@ def main():
     finally:
         for fs in fs_list:
             fs.close()
-    print('文件写入成功...')
+    print('操作完成...')
 
 
 if __name__ == '__main__':
