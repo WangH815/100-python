@@ -3,8 +3,6 @@ import tkinter
 import tkinter.messagebox
 from threading import Thread
 
-'''待调试'''
-
 
 def main():
     class DownloadTaskHandler(Thread):
@@ -22,7 +20,7 @@ def main():
 
     top = tkinter.Tk()
     top.title('单线程')
-    top.geometry('200x150')
+    top.geometry('300x150')
     top.wm_attributes('-topmost', 1)
 
     panel = tkinter.Frame(top)
@@ -30,7 +28,7 @@ def main():
     button1.pack(side='left')
     button2 = tkinter.Button(panel, text='关于', command=show_about)
     button2.pack(side='right')
-    panel.pack(side='buttom')
+    panel.pack(side='bottom')
 
     tkinter.mainloop()
 

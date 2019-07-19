@@ -1,13 +1,12 @@
 from multiprocessing import Process, Queue
-from random import randint
 from time import time
 
 
 def task_handler(curr_list, result_queue):
-    totol = 0
+    total = 0
     for num in curr_list:
-        totol += num
-    result_queue.put(totol)
+        total += num
+    result_queue.put(total)
 
 
 def main():
@@ -15,20 +14,22 @@ def main():
     num_list = [x for x in range(1, 100000001)]
     result_queue = Queue()
     index = 0
-    for _ in range(8):
+    ts = 20
+    part = 100000000 // ts
+    for _ in range(ts):
         p = Process(target=task_handler,
-                    args=(num_list[index:index + 12500000], result_queue))
-        index += 12500000
+                    args=(num_list[index:index + part], result_queue))
+        index += part
         process.append(p)
         p.start()
 
     start = time()
     for p in process:
         p.join()
-    totol = 0
+    total = 0
     while not result_queue.empty():
-        totol += result_queue.get()
-    print(totol)
+        total += result_queue.get()
+    print(total)
     end = time()
     print('Exec times:%.2f' % (end - start))
 

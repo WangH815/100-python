@@ -22,13 +22,13 @@ class Account(object):
 
 
 class AddMoney(Thread):
-    def __init__(self, accout, money):
+    def __init__(self, account, money):
         super().__init__()
-        self._accout = accout
+        self._account = account
         self._money = money
 
     def run(self):
-        self._accout.deposit(self._money)
+        self._account.deposit(self._money)
 
 
 def main():
